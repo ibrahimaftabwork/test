@@ -1,0 +1,75 @@
+.ruler {
+    $r_h: 1.5rem;
+    display: block;
+    width: 100%;
+    height: $r_h;
+    position: relative;
+    background-color: #eaeaea;
+    z-index: 1;
+    .guide {
+        line-height: $r_h;
+        height: $r_h;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: #000000;
+        overflow: hidden;
+        transition: 400ms all;
+        display: none;
+        span {
+            position: absolute;
+            text-align: center;
+            font-size: 0.98em;
+            padding: 0 0.5rem;
+            $i-spc: 0.3rem;
+            i {
+                transition: 400ms all;
+                &:hover {
+                    color: #cc0000
+                }
+            }
+            &.guide-start {
+                left: 0;
+                i {
+                    margin-left: $i-spc;
+                }
+            }
+            &.guide-end {
+                right: 0;
+                i {
+                    margin-right: $i-spc;
+                }
+            }
+        }
+        &:hover {
+            background-color: #f4f4f4;
+        }
+        &.screen-width {
+            width: 100%;
+        }
+        &.guide-active {
+            background-color: #f0f0f0;
+        }
+    }
+    &.all-ruler {
+        .all {
+            display: block;
+        }
+    }
+    &.desktop-ruler {
+        .desktop {
+            display: block;
+        }
+    }
+    &.tablet-ruler {
+        .tablet {
+            display: block;
+        }
+    }
+    &.mobile-ruler {
+        .mobile {
+            display: block;
+        }
+    }
+}

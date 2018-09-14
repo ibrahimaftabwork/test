@@ -1,0 +1,123 @@
+.resizer-filter {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transition: padding 300ms ease-out;
+    position: relative;
+    .form {
+        display: table;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 100%;
+        $line-height: 4rem;
+        label {
+            display: block;
+            vertical-align: top;
+            max-width: 100%;
+            span {
+                font-size: 0;
+                display: inline-block;
+                vertical-align: top;
+                position: absolute;
+                padding: 0 1.5rem;
+                left: 0;
+                top: 0;
+                i {
+                    font-size: 20px;
+                    display: block;
+                    vertical-align: top;
+                    margin-right: 0.5rem;
+                    &:before {
+                        display: block;
+                        line-height: $line-height;
+                    }
+                }
+            }
+            input {
+                display: inline-block;
+                vertical-align: top;
+                line-height: $line-height;
+                width: 100%;
+                max-width: 100%;
+                padding: 0 4rem;
+                font-size: 1em;
+                border: none;
+                background-color: transparent;
+            }
+        }
+        button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 0;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            i {
+                display: block;
+                &:before {
+                    line-height: $line-height;
+                    display: block;
+                    font-size: 20px;
+                    padding: 0 1.5rem;
+                }
+            }
+        }
+        i {
+            color: #ddd
+        }
+    }
+    .viewport {
+        display: block;
+        position: absolute;
+        margin: auto;
+        top: 5.5rem;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transition: top 300ms ease-out, bottom 300ms ease-out, left 300ms ease-out, right 300ms ease-out;
+        .device {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            height: 100%;
+            &.custom-device {
+                display: table;
+                border: solid #999;
+                border-width: 0 7px;
+                overflow: hidden;
+                min-width: 480px;
+            }
+            iframe {
+                display: block;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                background-color: #ffffff;
+                border: 0;
+            }
+        }
+    }
+    &.resizer-field-active {
+        padding: 2rem;
+        .form {
+            label {
+                input {
+                    background-color: white;
+                }
+            }
+        }
+        .viewport {
+            top: 7.5rem;
+            left: 2rem;
+            right: 2rem;
+            bottom: 2rem;
+        }
+        .devices-option {
+            top: 9rem;
+            left: 4rem;
+        }
+    }
+}
